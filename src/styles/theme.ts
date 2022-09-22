@@ -11,6 +11,8 @@ const theme = {
     toggleBackground: "hsl(223, 50%, 87%)",
     text: "hsl(225, 20%, 60%)",
     textAndCtaBackground: "hsl(227, 35%, 25%)",
+    ctaShadow: "hsl(227 35% 25% / 25%)",
+    ctaTextHover: "hsl(0, 0%, 100%)",
   },
   screen: {
     lg: "588px",
