@@ -2,6 +2,9 @@ const theme = {
   color: {
     fullSliderBar: "hsl(174, 77%, 80%)",
     sliderBackground: "hsl(174, 86%, 45%)",
+    sliderShadow: "hsl(174 77% 80% / 40%)",
+    sliderHover: "hsl(174, 86%, 50%)",
+    sliderGrab: "hsl(174, 86%, 35%)",
     discountBackground: "hsl(14, 92%, 95%)",
     discountText: "hsl(15, 100%, 70%)",
     ctaText: "hsl(226, 100%, 87%)",
