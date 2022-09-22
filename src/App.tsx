@@ -5,7 +5,6 @@ import Background from "@components/Background/Background";
 import Card from "@components/Card/Card";
 import Hero from "@components/Hero/Hero";
 
-
 function App() {
   return (
     <>

@@ -13,7 +13,7 @@ const theme = {
     textAndCtaBackground: "hsl(227, 35%, 25%)",
   },
   screen: {
-    lg: "992px",
+    lg: "588px",
   }
 };
 
