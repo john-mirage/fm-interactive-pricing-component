@@ -12,6 +12,9 @@ const theme = {
     text: "hsl(225, 20%, 60%)",
     textAndCtaBackground: "hsl(227, 35%, 25%)",
   },
+  screen: {
+    lg: "992px",
+  }
 };
 
 export default theme;
