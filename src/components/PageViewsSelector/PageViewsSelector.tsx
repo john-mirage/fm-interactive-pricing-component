@@ -1,12 +1,14 @@
 import { RangeInput } from "@components/PageViewsSelector/PageViewsSelector.style";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
-function PageViewsSelector({ setPageViews }) {
+function PageViewsSelector({ updatePageViews }) {
   const rangeInput = useRef(null);
+  const hasNotBeenMountedOnce = useRef(true);
 
   useEffect(() => {
-    if (rangeInput.current) {
+    if (hasNotBeenMountedOnce.current) {
       rangeInput.current.style.setProperty('--track-fill', rangeToPercent(rangeInput.current));
+      hasNotBeenMountedOnce.current = false;
     }
   }, []);
 
@@ -20,19 +22,19 @@ function PageViewsSelector({ setPageViews }) {
     event.currentTarget.style.setProperty('--track-fill', rangeToPercent(event.currentTarget));
     switch (event.currentTarget.value) {
       case "0":
-        setPageViews("10k");
+        updatePageViews("10k");
         break;
       case "1":
-        setPageViews("50k");
+        updatePageViews("50k");
         break;
       case "2":
-        setPageViews("100k");
+        updatePageViews("100k");
         break;
       case "3":
-        setPageViews("500k");
+        updatePageViews("500k");
         break;
       case "4":
-        setPageViews("1m");
+        updatePageViews("1m");
         break;
       default:
         throw new Error("the value is not valid");
@@ -40,7 +42,11 @@ function PageViewsSelector({ setPageViews }) {
   }
 
   return (
-    <RangeInput ref={rangeInput} onInput={handleInputChange} defaultValue="2" />
+    <RangeInput
+      ref={rangeInput}
+      onInput={handleInputChange}
+      defaultValue="2"
+    />
   );
 }
 

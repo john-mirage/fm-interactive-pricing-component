@@ -2,7 +2,7 @@ import { Container, Header, PageViews, PricePerPeriod, Price, Period, Footer, Co
 import FeatureList from "@components/FeatureList/FeatureList";
 import PageViewsSelector from "@components/PageViewsSelector/PageViewsSelector";
 import PlanSelector from "@components/PlanSelector/PlanSelector";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const priceFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -14,52 +14,58 @@ function Card() {
   const [period, setPeriod] = useState("month");
   const [price, setPrice] = useState(16);
 
-  function getPeriodPrice(currentPrice: number, currentPeriod: string) {
-    switch (currentPeriod) {
+  function getPrice(newPageViews: string) {
+    switch (newPageViews) {
+      case "10k":
+        return 8;
+      case "50k":
+        return 12;
+      case "100k":
+        return 16;
+      case "500k":
+        return 24;
+      case "1m":
+        return 36;
+      default:
+        throw new Error("The page views are not valid");
+    }
+  }
+
+  function getPeriodPrice(newPrice: number, newPeriod: string) {
+    switch (newPeriod) {
       case "month":
-        return currentPrice;
+        return newPrice;
       case "year":
-        const discount = (currentPrice * 12) * 0.25;
-        return (currentPrice * 12) - discount;
+        return (newPrice * 12) * 0.75;
       default:
         throw new Error("The period is not valid");
     }
   }
 
-  useEffect(() => {
-    switch (pageViews) {
-      case "10k":
-        setPrice(getPeriodPrice(8, period));
-        break;
-      case "50k":
-        setPrice(getPeriodPrice(12, period));
-        break;
-      case "100k":
-        setPrice(getPeriodPrice(16, period));
-        break;
-      case "500k":
-        setPrice(getPeriodPrice(24, period));
-        break;
-      case "1m":
-        setPrice(getPeriodPrice(36, period));
-        break;
-      default:
-        throw new Error("The page views value is not valid");
-    }
-  }, [pageViews, period]);
+  function updatePageViews(newPageViews: string) {
+    setPageViews(newPageViews);
+    const newPrice = getPrice(newPageViews);
+    const newPeriodPrice = getPeriodPrice(newPrice, period);
+    setPrice(newPeriodPrice);
+  }
 
-  console.log(price, period);
+  function updatePeriod(newPeriod: string) {
+    setPeriod(newPeriod);
+    const newPrice = getPrice(pageViews);
+    const newPeriodPrice = getPeriodPrice(newPrice, newPeriod);
+    setPrice(newPeriodPrice);
+  }
 
   return (
     <Container>
       <Header>
         <PageViews>{pageViews} pageviews</PageViews>
-        <PageViewsSelector setPageViews={setPageViews} />
+        <PageViewsSelector updatePageViews={updatePageViews} />
         <PricePerPeriod>
           <Price>{priceFormatter.format(price)}</Price>
           <Period> / {period}</Period>
         </PricePerPeriod>
-        <PlanSelector setPeriod={setPeriod} />
+        <PlanSelector updatePeriod={updatePeriod} />
       </Header>
       <Footer>
         <FeatureList />

@@ -1,9 +1,9 @@
 import { Container, Plan, Input, Badge, Label } from "@components/PlanSelector/PlanSelector.style";
 
-function PlanSelector({ setPeriod }) {
+function PlanSelector({ updatePeriod }) {
   
   function handleInputChange(event: InputEvent) {
-    setPeriod(event.currentTarget.checked ? "year" : "month");
+    updatePeriod(event.currentTarget.checked ? "year" : "month");
   }
   
   return (
