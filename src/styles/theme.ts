@@ -18,6 +18,7 @@ const theme = {
     ctaTextHover: "hsl(0, 0%, 100%)",
   },
   screen: {
+    sm: "375px",
     lg: "588px",
   }
 };

@@ -4,6 +4,10 @@ export const List = styled.ul`
   margin: 0 0 2rem 0; /* 32px */
   padding: 0;
   list-style: none;
+
+  @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    margin: 0;
+  }
 `;
 
 export const ListItem = styled.li`

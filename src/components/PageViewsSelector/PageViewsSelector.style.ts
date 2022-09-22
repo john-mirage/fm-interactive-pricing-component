@@ -77,4 +77,9 @@ export const RangeInput = styled.input.attrs(() => ({
   &::-moz-range-thumb {
     ${thumbStyle}
   }
+
+  @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    margin-bottom: 2.5rem; /* 40px */
+    grid-area: pageViewsSelector;
+  }
 `;
