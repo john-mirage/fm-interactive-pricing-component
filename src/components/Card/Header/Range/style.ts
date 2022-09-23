@@ -43,7 +43,7 @@ const thumbStyle = css`
   }
 `;
 
-export const RangeInput = styled.input.attrs(() => ({
+export const Range = styled.input.attrs(() => ({
   type: "range",
   min: "0",
   max: "4",

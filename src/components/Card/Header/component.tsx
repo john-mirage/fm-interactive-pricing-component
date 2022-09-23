@@ -1,15 +1,14 @@
-import { Container, Header, PageViews, PricePerPeriod, Price, Period, Footer, ConfirmButton } from "@components/Card/Card.style";
-import FeatureList from "@components/FeatureList/FeatureList";
-import PageViewsSelector from "@components/PageViewsSelector/PageViewsSelector";
-import PlanSelector from "@components/PlanSelector/PlanSelector";
 import { useState } from "react";
+import * as Styled from "@components/Card/Header/style";
+import Range from "@components/Card/Header/Range";
+import Checkbox from "@components/Card/Header/Checkbox";
 
 const priceFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
   currency: "USD",
 });
 
-function Card() {
+function Header() {
   const [pageViews, setPageViews] = useState("100k");
   const [period, setPeriod] = useState("month");
   const [price, setPrice] = useState(16);
@@ -57,22 +56,16 @@ function Card() {
   }
 
   return (
-    <Container>
-      <Header>
-        <PageViews>{pageViews} pageviews</PageViews>
-        <PageViewsSelector updatePageViews={updatePageViews} />
-        <PricePerPeriod>
-          <Price>{priceFormatter.format(price)}</Price>
-          <Period> / {period}</Period>
-        </PricePerPeriod>
-        <PlanSelector updatePeriod={updatePeriod} />
-      </Header>
-      <Footer>
-        <FeatureList />
-        <ConfirmButton>Start my trial</ConfirmButton>
-      </Footer>
-    </Container>
+    <Styled.Header>
+      <Styled.PageViews>{pageViews} pageviews</Styled.PageViews>
+      <Range updatePageViews={updatePageViews} />
+      <Styled.PriceForPeriod>
+        <Styled.Price>{priceFormatter.format(price)}</Styled.Price>
+        <Styled.Period> / {period}</Styled.Period>
+      </Styled.PriceForPeriod>
+      <Checkbox updatePeriod={updatePeriod} />
+    </Styled.Header>
   );
 }
 
-export default Card;
+export default Header;

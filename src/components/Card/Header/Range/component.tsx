@@ -1,9 +1,15 @@
-import { RangeInput } from "@components/PageViewsSelector/PageViewsSelector.style";
-import { useEffect, useRef, useState } from "react";
+import * as Styled from "@components/Card/Header/Range/style";
+import { useEffect, useRef } from "react";
 
-function PageViewsSelector({ updatePageViews }) {
+function Range({ updatePageViews }) {
   const rangeInput = useRef(null);
   const hasNotBeenMountedOnce = useRef(true);
+
+  function rangeToPercent (slider: HTMLInputElement) {
+    const max = Number(slider.getAttribute('max')) || 10;
+    const percent = (Number(slider.value) / max) * 100;
+    return `${String(percent)}%`;
+  };
 
   useEffect(() => {
     if (hasNotBeenMountedOnce.current) {
@@ -12,15 +18,9 @@ function PageViewsSelector({ updatePageViews }) {
     }
   }, []);
 
-  function rangeToPercent (slider: HTMLInputElement) {
-    const max = Number(slider.getAttribute('max')) || 10;
-    const percent = (Number(slider.value) / max) * 100;
-    return `${String(percent)}%`;
-  };
-
-  function handleInputChange(event: Event) {
-    event.currentTarget.style.setProperty('--track-fill', rangeToPercent(event.currentTarget));
-    switch (event.currentTarget.value) {
+  function handleInputChange() {
+    rangeInput.current.style.setProperty('--track-fill', rangeToPercent(rangeInput.current));
+    switch (rangeInput.current.value) {
       case "0":
         updatePageViews("10k");
         break;
@@ -42,7 +42,7 @@ function PageViewsSelector({ updatePageViews }) {
   }
 
   return (
-    <RangeInput
+    <Styled.Range
       ref={rangeInput}
       onInput={handleInputChange}
       defaultValue="2"
@@ -50,4 +50,4 @@ function PageViewsSelector({ updatePageViews }) {
   );
 }
 
-export default PageViewsSelector;
+export default Range;

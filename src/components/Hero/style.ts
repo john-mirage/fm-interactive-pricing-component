@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import circleBackground from "@images/pattern-circles.svg";
 
-export const Container = styled.header`
+export const Hero = styled.header`
   margin-bottom: 2rem; /* 32px */
   margin-left: auto;
   margin-right: auto;

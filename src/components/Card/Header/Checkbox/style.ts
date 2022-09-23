@@ -41,7 +41,7 @@ export const Label = styled.label`
   margin-right: 0.75rem; /* 12px */
 `;
 
-export const Input = styled.input.attrs(() => ({
+export const Checkbox = styled.input.attrs(() => ({
   type: "checkbox",
   role: "switch"
 }))`

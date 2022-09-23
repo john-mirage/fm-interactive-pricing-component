@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import backgroundPattern from "@images/bg-pattern.svg";
 
-export const Container = styled.div`
+export const Background = styled.div`
   position: absolute;
   z-index: 10;
   top: 0;
