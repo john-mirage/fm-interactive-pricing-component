@@ -16,6 +16,8 @@ const theme = {
     textAndCtaBackground: "hsl(227, 35%, 25%)",
     ctaShadow: "hsl(227 35% 25% / 25%)",
     ctaTextHover: "hsl(0, 0%, 100%)",
+
+    thumbHighlight: "hsl(0 0% 0% / 25%)"
   },
   screen: {
     sm: "375px",
