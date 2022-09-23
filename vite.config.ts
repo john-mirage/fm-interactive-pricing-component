@@ -7,7 +7,9 @@ export default defineConfig({
   base: "/interactive-pricing-component/",
   plugins: [react({
     babel: {
-      plugins: ["babel-plugin-styled-components"]
+      plugins: [
+        ["babel-plugin-styled-components", { "fileName": false }]
+      ]
     }
   })],
   resolve: {

@@ -43,6 +43,11 @@ const thumbStyle = css`
   }
 `;
 
+export const Container = styled.div`
+  width: 100%;
+  height: auto;
+`;
+
 export const Range = styled.input.attrs(() => ({
   type: "range",
   min: "0",
@@ -76,10 +81,5 @@ export const Range = styled.input.attrs(() => ({
 
   &::-moz-range-thumb {
     ${thumbStyle}
-  }
-
-  @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
-    margin-bottom: 2.5rem; /* 40px */
-    grid-area: pageViewsSelector;
   }
 `;

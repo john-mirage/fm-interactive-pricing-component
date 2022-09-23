@@ -1,7 +1,5 @@
 import { useState } from "react";
 import * as Styled from "./style";
-import Range from "@components/Range";
-import Switch from "@components/Switch";
 
 const priceFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -58,12 +56,12 @@ function CardHeader() {
   return (
     <Styled.Header>
       <Styled.PageViews>{pageViews} pageviews</Styled.PageViews>
-      <Range updatePageViews={updatePageViews} />
+      <Styled.Range updatePageViews={updatePageViews} />
       <Styled.PriceForPeriod>
         <Styled.Price>{priceFormatter.format(price)}</Styled.Price>
         <Styled.Period> / {period}</Styled.Period>
       </Styled.PriceForPeriod>
-      <Switch updatePeriod={updatePeriod} />
+      <Styled.Switch updatePeriod={updatePeriod} />
     </Styled.Header>
   );
 }

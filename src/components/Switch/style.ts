@@ -1,17 +1,12 @@
 import styled from "styled-components";
 
 export const Switch = styled.div`
-  margin-bottom: 2.25rem; /* 36px */
   display: flex;
   flex-direction: column;
   align-items: center;
 
   @media screen and (min-width: ${({theme}) => theme.screen.sm}) {
     flex-direction: row;
-  }
-
-  @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
-    grid-area: planSelector;
   }
 `;
 

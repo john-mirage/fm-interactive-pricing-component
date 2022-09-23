@@ -1,4 +1,6 @@
 import styled from "styled-components";
+import BaseRange from "@components/Range";
+import BaseSwitch from "@components/Switch";
 
 export const Header = styled.div`
   display: flex;
@@ -12,9 +14,9 @@ export const Header = styled.div`
     display: grid;
     justify-items: center;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-areas: "pageViews         pricePerMonth"
-                         "pageViewsSelector pageViewsSelector"
-                         "planSelector      planSelector";
+    grid-template-areas: "pageViews      pricePerMonth"
+                         "pageViewsRange pageViewsRange"
+                         "periodSwitch   periodSwitch";
     padding-left: 2.75rem; /* 44px */
     padding-right: 2.75rem; /* 44px */
   }
@@ -31,6 +33,13 @@ export const PageViews = styled.p`
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
     grid-area: pageViews;
     justify-self: left;
+  }
+`;
+
+export const Range = styled(BaseRange)`
+  @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    margin-bottom: 2.5rem; /* 40px */
+    grid-area: pageViewsRange;
   }
 `;
 
@@ -58,4 +67,12 @@ export const Period = styled.span`
   font-size: 0.875rem; /* 14px */
   font-weight: 600;
   color: ${({theme}) => theme.color.text};
+`;
+
+export const Switch = styled(BaseSwitch)`
+  margin-bottom: 2.25rem; /* 36px */
+
+  @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    grid-area: periodSwitch;
+  }
 `;

@@ -1,7 +1,7 @@
 import * as Styled from "./style";
 import { useEffect, useRef } from "react";
 
-function Range({ updatePageViews }) {
+function Range({ className, updatePageViews }) {
   const rangeInput = useRef(null);
   const hasNotBeenMountedOnce = useRef(true);
 
@@ -42,11 +42,13 @@ function Range({ updatePageViews }) {
   }
 
   return (
-    <Styled.Range
-      ref={rangeInput}
-      onInput={handleInputChange}
-      defaultValue="2"
-    />
+    <Styled.Container className={className}>
+      <Styled.Range
+        ref={rangeInput}
+        onInput={handleInputChange}
+        defaultValue="2"
+      />
+    </Styled.Container>
   );
 }
 

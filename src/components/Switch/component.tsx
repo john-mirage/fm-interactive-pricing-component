@@ -1,13 +1,13 @@
 import * as Styled from "./style";
 
-function Switch({ updatePeriod }) {
+function Switch({ className, updatePeriod }) {
   
   function handleInputChange(event: InputEvent) {
     updatePeriod(event.currentTarget.checked ? "year" : "month");
   }
   
   return (
-    <Styled.Switch>
+    <Styled.Switch className={className}>
       <Styled.Plan>Monthly Billing</Styled.Plan>
       <Styled.Label>
         <Styled.Checkbox onChange={handleInputChange} />

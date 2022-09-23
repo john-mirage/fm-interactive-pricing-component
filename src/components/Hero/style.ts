@@ -2,9 +2,6 @@ import styled from "styled-components";
 import circleBackground from "@images/pattern-circles.svg";
 
 export const Hero = styled.header`
-  margin-bottom: 2rem; /* 32px */
-  margin-left: auto;
-  margin-right: auto;
   position: relative;
   z-index: 100;
   display: flex;
@@ -22,7 +19,6 @@ export const Hero = styled.header`
   background-size: contain;
 
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
-    margin-bottom: 3.5rem; /* 56px */
     padding-top: 2.5rem; /* 40px */
     padding-bottom: 2.5rem; /* 40px */
   }
