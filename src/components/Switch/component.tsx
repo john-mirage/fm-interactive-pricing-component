@@ -26,7 +26,7 @@ function Switch({ className, updatePeriod }) {
       </Styled.Label>
       <Styled.Plan>
         Yearly Billing
-        <Styled.Badge>-25%</Styled.Badge>
+        <Styled.Badge>25%</Styled.Badge>
       </Styled.Plan>
     </Styled.Switch>
   );

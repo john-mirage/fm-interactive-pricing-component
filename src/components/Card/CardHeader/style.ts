@@ -36,6 +36,8 @@ export const PageViews = styled.p`
     margin: 0;
     grid-area: pageViews;
     justify-self: left;
+    font-size: 0.875rem; /* 14px */
+    letter-spacing: 0.125rem; /* 2px */
   }
 `;
 
@@ -67,12 +69,20 @@ export const Price = styled.span`
   font-weight: 800;
   letter-spacing: -0.0625rem; /* -1px */
   color: ${({theme}) => theme.color.textHeading};
+
+  @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    font-size: 2.5rem; /* 40px */
+  }
 `;
 
 export const Period = styled.span`
   font-size: 0.875rem; /* 14px */
   font-weight: 600;
   color: ${({theme}) => theme.color.textBody};
+
+  @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    font-size: 1rem; /* 16px */
+  }
 `;
 
 export const Switch = styled(BaseSwitch)`
