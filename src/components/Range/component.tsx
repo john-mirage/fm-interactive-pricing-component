@@ -2,47 +2,49 @@ import * as Styled from "./style";
 import { FunctionComponent, useEffect, useRef } from "react";
 
 interface Props {
-  className: string;
+  className?: string;
   updatePageViews: (newPageViews: string) => void;
 }
 
 const Range: FunctionComponent<Props> = ({ className, updatePageViews }) => {
-  const rangeInput = useRef(null);
-  const hasNotBeenMountedOnce = useRef(true);
+  const rangeInput = useRef<HTMLInputElement>(null);
+  const hasNotBeenMountedOnce = useRef<Boolean>(true);
 
-  function rangeToPercent (slider: HTMLInputElement) {
+  const rangeToPercent = (slider: HTMLInputElement) => {
     const max = Number(slider.getAttribute('max')) || 10;
     const percent = (Number(slider.value) / max) * 100;
     return `${String(percent)}%`;
   };
 
   useEffect(() => {
-    if (hasNotBeenMountedOnce.current) {
+    if (hasNotBeenMountedOnce.current && rangeInput.current) {
       rangeInput.current.style.setProperty('--track-fill', rangeToPercent(rangeInput.current));
       hasNotBeenMountedOnce.current = false;
     }
   }, []);
 
   function handleInputChange() {
-    rangeInput.current.style.setProperty('--track-fill', rangeToPercent(rangeInput.current));
-    switch (rangeInput.current.value) {
-      case "0":
-        updatePageViews("10k");
-        break;
-      case "1":
-        updatePageViews("50k");
-        break;
-      case "2":
-        updatePageViews("100k");
-        break;
-      case "3":
-        updatePageViews("500k");
-        break;
-      case "4":
-        updatePageViews("1m");
-        break;
-      default:
-        throw new Error("the value is not valid");
+    if (rangeInput.current) {
+      rangeInput.current.style.setProperty('--track-fill', rangeToPercent(rangeInput.current));
+      switch (rangeInput.current.value) {
+        case "0":
+          updatePageViews("10k");
+          break;
+        case "1":
+          updatePageViews("50k");
+          break;
+        case "2":
+          updatePageViews("100k");
+          break;
+        case "3":
+          updatePageViews("500k");
+          break;
+        case "4":
+          updatePageViews("1m");
+          break;
+        default:
+          throw new Error("the value is not valid");
+      }
     }
   }
 

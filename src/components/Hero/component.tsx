@@ -2,7 +2,7 @@ import { FunctionComponent } from "react";
 import * as Styled from "./style";
 
 interface Props {
-  className: string;
+  className?: string;
 }
 
 const Hero: FunctionComponent<Props> = ({ className }) => {
