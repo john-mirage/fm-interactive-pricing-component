@@ -13,29 +13,20 @@ const CardHeader: FunctionComponent = () => {
 
   const getPrice = (newPageViews: string) => {
     switch (newPageViews) {
-      case "10k":
-        return 8;
-      case "50k":
-        return 12;
-      case "100k":
-        return 16;
-      case "500k":
-        return 24;
-      case "1m":
-        return 36;
-      default:
-        throw new Error("The page views are not valid");
+      case "10k": return 8;
+      case "50k": return 12;
+      case "100k": return 16;
+      case "500k": return 24;
+      case "1m": return 36;
+      default: throw new Error("The page views are not valid");
     }
   }
 
   const getPeriodPrice = (newPrice: number, newPeriod: string) => {
     switch (newPeriod) {
-      case "month":
-        return newPrice;
-      case "year":
-        return (newPrice * 12) * 0.75;
-      default:
-        throw new Error("The period is not valid");
+      case "month": return newPrice;
+      case "year": return (newPrice * 12) * 0.75;
+      default: throw new Error("The period is not valid");
     }
   }
 
