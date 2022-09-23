@@ -1,7 +1,7 @@
 import * as Styled from "./style";
 import Button from "@components/Button";
 
-function Footer() {
+function CardFooter() {
   return (
     <Styled.Footer>
       <Styled.List>
@@ -29,4 +29,4 @@ function Footer() {
   );
 }
 
-export default Footer;
+export default CardFooter;

@@ -1,12 +1,12 @@
-import Header from "@components/Card/Header";
-import Footer from "@components/Card/Footer";
+import CardHeader from "@components/Card/CardHeader";
+import CardFooter from "@components/Card/CardFooter";
 import * as Styled from "./style";
 
 function Card() {
   return (
     <Styled.Card>
-      <Header></Header>
-      <Footer></Footer>
+      <CardHeader></CardHeader>
+      <CardFooter></CardFooter>
     </Styled.Card>
   );
 }

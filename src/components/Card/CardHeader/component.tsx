@@ -8,7 +8,7 @@ const priceFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
 });
 
-function Header() {
+function CardHeader() {
   const [pageViews, setPageViews] = useState("100k");
   const [period, setPeriod] = useState("month");
   const [price, setPrice] = useState(16);
@@ -68,4 +68,4 @@ function Header() {
   );
 }
 
-export default Header;
+export default CardHeader;
