@@ -51,12 +51,7 @@ export const Label = styled.label`
   height: auto;
 `;
 
-export const Range = styled.input.attrs(() => ({
-  type: "range",
-  min: "0",
-  max: "4",
-  step: "1",
-}))`
+export const Range = styled.input`
   --track-height: 0.5rem; /* 8px */
   --track-fill: 0%;
   --thumb-size: 2.5rem;

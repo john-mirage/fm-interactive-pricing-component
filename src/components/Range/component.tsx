@@ -1,4 +1,4 @@
-import { FunctionComponent, useEffect, useRef } from "react";
+import React, { FunctionComponent, useEffect, useRef, useState } from "react";
 import * as Styled from "./style";
 
 interface Props {
@@ -7,53 +7,42 @@ interface Props {
 }
 
 const Range: FunctionComponent<Props> = ({ className, updatePageViews }) => {
-  const rangeInput = useRef<HTMLInputElement>(null);
-  const hasNotBeenMountedOnce = useRef<Boolean>(true);
-
-  const rangeToPercent = (slider: HTMLInputElement) => {
-    const max = Number(slider.getAttribute('max')) || 10;
-    const percent = (Number(slider.value) / max) * 100;
-    return `${String(percent)}%`;
-  };
+  const [rangeValue, setRangeValue] = useState<string>("2");
+  const [rangeMaxValue, setRangeMaxValue] = useState<string>("4");
+  const range = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
-    if (hasNotBeenMountedOnce.current && rangeInput.current) {
-      rangeInput.current.style.setProperty('--track-fill', rangeToPercent(rangeInput.current));
-      hasNotBeenMountedOnce.current = false;
-    }
-  }, []);
-
-  function handleInputChange() {
-    if (rangeInput.current) {
-      rangeInput.current.style.setProperty('--track-fill', rangeToPercent(rangeInput.current));
-      switch (rangeInput.current.value) {
-        case "0":
-          updatePageViews("10k");
-          break;
-        case "1":
-          updatePageViews("50k");
-          break;
-        case "2":
-          updatePageViews("100k");
-          break;
-        case "3":
-          updatePageViews("500k");
-          break;
-        case "4":
-          updatePageViews("1m");
-          break;
-        default:
-          throw new Error("the value is not valid");
+    if (range.current) {
+      const percent = (Number(rangeValue) / Number(rangeMaxValue)) * 100;
+      range.current.style.setProperty("--track-fill", `${String(percent)}%`);
+      switch (rangeValue) {
+        case "0": updatePageViews("10k"); break;
+        case "1": updatePageViews("50k"); break;
+        case "2": updatePageViews("100k"); break;
+        case "3": updatePageViews("500k"); break;
+        case "4": updatePageViews("1m"); break;
+        default: throw new Error("the value is not valid");
       }
     }
+  }, [rangeValue]);
+
+  function handleInputChange(event: React.FormEvent<HTMLInputElement>) {
+    setRangeValue(event.currentTarget.value);
   }
 
   return (
-    <Styled.Label className={className} aria-label="page views">
+    <Styled.Label
+      className={className}
+      aria-label="page views"
+    >
       <Styled.Range
-        ref={rangeInput}
+        ref={range}
+        type= "range"
+        min= "0"
+        max={rangeMaxValue}
+        step= "1"
+        value={rangeValue}
         onInput={handleInputChange}
-        defaultValue="2"
       />
     </Styled.Label>
   );

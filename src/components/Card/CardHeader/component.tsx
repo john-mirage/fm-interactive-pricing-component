@@ -11,7 +11,7 @@ const CardHeader: FunctionComponent = () => {
   const [period, setPeriod] = useState("month");
   const [price, setPrice] = useState(16);
 
-  function getPrice(newPageViews: string) {
+  const getPrice = (newPageViews: string) => {
     switch (newPageViews) {
       case "10k":
         return 8;
@@ -28,7 +28,7 @@ const CardHeader: FunctionComponent = () => {
     }
   }
 
-  function getPeriodPrice(newPrice: number, newPeriod: string) {
+  const getPeriodPrice = (newPrice: number, newPeriod: string) => {
     switch (newPeriod) {
       case "month":
         return newPrice;
@@ -39,14 +39,14 @@ const CardHeader: FunctionComponent = () => {
     }
   }
 
-  function updatePageViews(newPageViews: string) {
+  const updatePageViews = (newPageViews: string) => {
     setPageViews(newPageViews);
     const newPrice = getPrice(newPageViews);
     const newPeriodPrice = getPeriodPrice(newPrice, period);
     setPrice(newPeriodPrice);
   }
 
-  function updatePeriod(newPeriod: string) {
+  const updatePeriod = (newPeriod: string) => {
     setPeriod(newPeriod);
     const newPrice = getPrice(pageViews);
     const newPeriodPrice = getPeriodPrice(newPrice, newPeriod);
