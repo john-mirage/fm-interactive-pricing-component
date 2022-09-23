@@ -49,13 +49,13 @@ const Range: FunctionComponent<Props> = ({ className, updatePageViews }) => {
   }
 
   return (
-    <Styled.Container className={className}>
+    <Styled.Label className={className} aria-label="page views">
       <Styled.Range
         ref={rangeInput}
         onInput={handleInputChange}
         defaultValue="2"
       />
-    </Styled.Container>
+    </Styled.Label>
   );
 }
 

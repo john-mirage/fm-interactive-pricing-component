@@ -22,7 +22,7 @@ const Switch: FunctionComponent<Props> = ({ className, updatePeriod }) => {
   return (
     <Styled.Switch className={className}>
       <Styled.Plan>Monthly Billing</Styled.Plan>
-      <Styled.Label>
+      <Styled.Label aria-label="Yearly billing">
         <Styled.Checkbox
           ref={checkboxRef}
           onChange={handleCheckboxChange}

@@ -3,7 +3,6 @@ const theme = {
     background: "hsl(230, 100%, 99%)",
 
     card: "hsl(0, 0%, 100%)",
-
     cardFooterBorder: "hsl(224, 65%, 95%)",
     cardFooterListIcon: "hsl(174, 86%, 45%)",
 
@@ -16,7 +15,7 @@ const theme = {
     rangeTrackEmpty: "hsl(224, 65%, 95%)",
     rangeTrackFull: "hsl(174, 77%, 80%)",
     rangeThumb: "hsl(174, 86%, 45%)",
-    rangeThumbShadow: "hsl(174 86% 45% / 50%)",
+    rangeThumbShadow: "hsl(174 86% 55% / 40%)",
     rangeThumbHighlight: "hsl(174 86% 45% / 25%)",
     rangeThumbActive: "hsl(174, 86%, 35%)",
 

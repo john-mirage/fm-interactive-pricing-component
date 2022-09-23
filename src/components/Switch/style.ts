@@ -30,6 +30,11 @@ export const Badge = styled.span`
   background-color: ${({theme}) => theme.color.badge};
   color: ${({theme}) => theme.color.badgeLabel};
   border-radius: 9999px;
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.10);
+
+  @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    right: -0.5rem; /* -8px */
+  }
 
   &::before {
     display: inline-block;

@@ -11,7 +11,7 @@ export const Card = styled.main`
   padding-bottom: 2rem; /* 32px */
   border-radius: 0.5rem; /* 8px */
   background-color: ${({theme}) => theme.color.card};
-  box-shadow: 0 10px 15px -3px rgb(0 0 0 / 0.05), 0 4px 6px -4px rgb(0 0 0 / 0.05);
+  box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.08);
 
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
     padding-top: 2.5rem; /* 40px */

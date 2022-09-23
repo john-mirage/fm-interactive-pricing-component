@@ -28,7 +28,7 @@ const thumbStyle = css`
   background-position: center;
   box-shadow:
     0 0 0 var(--thumb-highlight-size) ${({theme}) => theme.color.rangeThumbHighlight},
-    0 0.5rem 2rem 0.25rem ${({theme}) => theme.color.rangeThumbShadow};
+    0 0.75rem 1.25rem 0.5rem ${({theme}) => theme.color.rangeThumbShadow};
 
   &:hover,
   &:active {
@@ -45,7 +45,8 @@ const thumbStyle = css`
   }
 `;
 
-export const Container = styled.div`
+export const Label = styled.label`
+  display: block;
   width: 100%;
   height: auto;
 `;
