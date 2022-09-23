@@ -28,7 +28,7 @@ export const Title = styled.h1`
   margin-bottom: 0.5rem; /* 8px */
   font-size: 1.25rem; /* 20px */
   font-weight: 800;
-  color: ${({theme}) => theme.color.textAndCtaBackground};
+  color: ${({theme}) => theme.color.textHeading};
 
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
     margin-bottom: 0.75rem; /* 12px */
@@ -41,7 +41,7 @@ export const SubTitle = styled.p`
   font-size: 0.8125rem; /* 13px */
   font-weight: 600;
   line-height: 1.4375rem; /* 23px */
-  color: ${({theme}) => theme.color.text};
+  color: ${({theme}) => theme.color.textBody};
 
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
     max-width: 26rem; /* 416px */

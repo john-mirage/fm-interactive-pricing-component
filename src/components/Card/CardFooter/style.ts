@@ -7,7 +7,7 @@ export const Footer = styled.div`
   padding-top: 1.5rem; /* 24px */
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  border-top: 0.0625rem solid ${({theme}) => theme.color.emptySliderBar};
+  border-top: 0.0625rem solid ${({theme}) => theme.color.cardFooterBorder};
 
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
     flex-direction: row;
@@ -36,7 +36,7 @@ export const ListItem = styled.li`
   align-items: center;
   font-size: 0.75rem; /* 12px */
   font-weight: 600;
-  color: ${({theme}) => theme.color.text};
+  color: ${({theme}) => theme.color.textBody};
 
   &:last-child {
     margin-bottom: 0;
@@ -49,4 +49,5 @@ export const Icon = styled.svg.attrs(() => ({
   margin-right: 0.75rem; /* 12px */
   width: 0.75rem; /* 12px */
   height: 0.75rem; /* 12px */
+  color: ${({theme}) => theme.color.cardFooterListIcon};
 `;

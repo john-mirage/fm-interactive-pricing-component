@@ -1,16 +1,28 @@
+import { useRef } from "react";
 import * as Styled from "./style";
 
 function Switch({ className, updatePeriod }) {
-  
-  function handleInputChange(event: InputEvent) {
-    updatePeriod(event.currentTarget.checked ? "year" : "month");
+  const checkboxRef = useRef(null);
+
+  function handleCheckboxChange() {
+    updatePeriod(checkboxRef.current.checked ? "year" : "month");
+  }
+
+  function handleCheckboxKeyUp(event: KeyboardEvent) {
+    if (event.key === "Enter") {
+      checkboxRef.current.checked = !checkboxRef.current.checked;
+    }
   }
   
   return (
     <Styled.Switch className={className}>
       <Styled.Plan>Monthly Billing</Styled.Plan>
       <Styled.Label>
-        <Styled.Checkbox onChange={handleInputChange} />
+        <Styled.Checkbox
+          ref={checkboxRef}
+          onChange={handleCheckboxChange}
+          onKeyUp={handleCheckboxKeyUp}
+        />
       </Styled.Label>
       <Styled.Plan>
         Yearly Billing

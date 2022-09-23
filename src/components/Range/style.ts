@@ -10,8 +10,8 @@ const trackStyle = css`
   background: linear-gradient(
       to right,
       transparent var(--track-fill),
-      ${({theme}) => theme.color.emptySliderBar} 0%
-    ), ${({theme}) => theme.color.fullSliderBar} fixed;
+      ${({theme}) => theme.color.rangeTrackEmpty} 0%
+    ), ${({theme}) => theme.color.rangeTrackFull} fixed;
 `;
 
 const thumbStyle = css`
@@ -22,11 +22,13 @@ const thumbStyle = css`
   height: var(--thumb-size);
   border-radius: 9999px;
   border: none;
-  background-color: ${({theme}) => theme.color.sliderBackground};
+  background-color: ${({theme}) => theme.color.rangeThumb};
   background-image: url(${sliderIcon});
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: 0 0 0 var(--thumb-highlight-size) ${({theme}) => theme.color.sliderShadow}, 0 0.5rem 2rem 0.5rem ${({theme}) => theme.color.sliderShadow};
+  box-shadow:
+    0 0 0 var(--thumb-highlight-size) ${({theme}) => theme.color.rangeThumbHighlight},
+    0 0.5rem 2rem 0.25rem ${({theme}) => theme.color.rangeThumbShadow};
 
   &:hover,
   &:active {
@@ -35,7 +37,7 @@ const thumbStyle = css`
   }
   
   &:active {
-    background-color: ${({theme}) => theme.color.sliderGrab};
+    background-color: ${({theme}) => theme.color.rangeThumbActive};
   }
 
   @media (prefers-reduced-motion: no-preference) {
