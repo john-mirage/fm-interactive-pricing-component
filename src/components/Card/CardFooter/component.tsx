@@ -13,7 +13,7 @@ const CardFooter: FunctionComponent = () => {
     <Styled.Footer>
       <Styled.List>
         {features.map((feature) => (
-          <Styled.ListItem>
+          <Styled.ListItem key={feature}>
             <Styled.Icon>
               <use href="#icon-check"/>
             </Styled.Icon>

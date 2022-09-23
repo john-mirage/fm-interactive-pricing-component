@@ -60,6 +60,11 @@ export const Label = styled.label`
   margin-left: 0.75rem; /* 12px */
   margin-right: 0.75rem; /* 12px */
   display: block;
+
+  @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    margin-left: 1rem; /* 16px */
+    margin-right: 1rem; /* 16px */
+  }
 `;
 
 export const Checkbox = styled.input.attrs(() => ({
