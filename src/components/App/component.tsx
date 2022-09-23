@@ -10,9 +10,11 @@ function App() {
     <>
       <GlobalStyle/>
       <ThemeProvider theme={theme}>
-        <Background />
-        <Styled.Hero />
-        <Card />
+        <Styled.App>
+          <Background />
+          <Styled.Hero />
+          <Card />
+        </Styled.App>
       </ThemeProvider>
     </>
   );

@@ -12,6 +12,7 @@ export const Footer = styled.div`
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
     flex-direction: row;
     justify-content: space-between;
+    padding-top: 2rem; /* 32px */
     padding-left: 2.75rem; /* 44px */
     padding-right: 2.75rem; /* 44px */
   }

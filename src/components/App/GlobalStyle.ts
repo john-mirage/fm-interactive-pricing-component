@@ -76,16 +76,6 @@ const GlobalStyle = createGlobalStyle`
       scroll-behavior: auto !important;
     }
   }
-
-  .page__icons {
-    display: none;
-  }
-
-  .page__app {
-    width: 100%;
-    min-height: 100vh;
-    padding: 3.5rem 1.5rem;
-  }
 `;
 
 export default GlobalStyle;

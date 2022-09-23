@@ -9,6 +9,7 @@ export const Header = styled.div`
   align-items: center;
   padding-left: 1.5rem;
   padding-right: 1.5rem;
+  padding-bottom: 2.25rem; /* 36px */
 
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
     display: grid;
@@ -19,6 +20,7 @@ export const Header = styled.div`
                          "periodSwitch   periodSwitch";
     padding-left: 2.75rem; /* 44px */
     padding-right: 2.75rem; /* 44px */
+    padding-bottom: 2.5rem; /* 40px */
   }
 `;
 
@@ -31,6 +33,7 @@ export const PageViews = styled.p`
   color: ${({theme}) => theme.color.text};
 
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    margin: 0;
     grid-area: pageViews;
     justify-self: left;
   }
@@ -38,6 +41,7 @@ export const PageViews = styled.p`
 
 export const Range = styled(BaseRange)`
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    margin-top: 1.5rem; /* 24px */
     margin-bottom: 2.5rem; /* 40px */
     grid-area: pageViewsRange;
   }
@@ -51,6 +55,7 @@ export const PriceForPeriod = styled.p`
   align-items: center;
 
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
+    margin: 0;
     grid-area: pricePerMonth;
     justify-self: right;
   }
@@ -70,8 +75,6 @@ export const Period = styled.span`
 `;
 
 export const Switch = styled(BaseSwitch)`
-  margin-bottom: 2.25rem; /* 36px */
-
   @media screen and (min-width: ${({theme}) => theme.screen.lg}) {
     grid-area: periodSwitch;
   }
