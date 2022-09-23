@@ -1,8 +1,9 @@
 import CardHeader from "@components/Card/CardHeader";
 import CardFooter from "@components/Card/CardFooter";
 import * as Styled from "./style";
+import { FunctionComponent } from "react";
 
-function Card() {
+const Card: FunctionComponent = () => {
   return (
     <Styled.Card>
       <CardHeader></CardHeader>

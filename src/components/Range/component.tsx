@@ -1,7 +1,12 @@
 import * as Styled from "./style";
-import { useEffect, useRef } from "react";
+import { FunctionComponent, useEffect, useRef } from "react";
 
-function Range({ className, updatePageViews }) {
+interface Props {
+  className: string;
+  updatePageViews: (newPageViews: string) => void;
+}
+
+const Range: FunctionComponent<Props> = ({ className, updatePageViews }) => {
   const rangeInput = useRef(null);
   const hasNotBeenMountedOnce = useRef(true);
 

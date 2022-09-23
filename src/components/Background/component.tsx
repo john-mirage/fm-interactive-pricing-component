@@ -1,6 +1,7 @@
+import { FunctionComponent } from "react";
 import * as Styled from "./style";
 
-function Background() {
+const Background: FunctionComponent = () => {
   return (
     <Styled.Background />
   );

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { FunctionComponent, useState } from "react";
 import * as Styled from "./style";
 
 const priceFormatter = new Intl.NumberFormat("en-US", {
@@ -6,7 +6,7 @@ const priceFormatter = new Intl.NumberFormat("en-US", {
   currency: "USD",
 });
 
-function CardHeader() {
+const CardHeader: FunctionComponent = () => {
   const [pageViews, setPageViews] = useState("100k");
   const [period, setPeriod] = useState("month");
   const [price, setPrice] = useState(16);

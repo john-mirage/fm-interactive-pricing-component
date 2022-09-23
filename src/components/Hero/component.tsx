@@ -1,6 +1,11 @@
+import { FunctionComponent } from "react";
 import * as Styled from "./style";
 
-function Hero({ className }: { className: string }) {
+interface Props {
+  className: string;
+}
+
+const Hero: FunctionComponent<Props> = ({ className }) => {
   return (
     <Styled.Hero className={className}>
       <Styled.Title>Simple, traffic-based pricing</Styled.Title>

@@ -1,14 +1,19 @@
-import { useRef } from "react";
+import { FunctionComponent, SyntheticEvent, useRef } from "react";
 import * as Styled from "./style";
 
-function Switch({ className, updatePeriod }) {
+interface Props {
+  className: string;
+  updatePeriod: (newPeriod: string) => void;
+}
+
+const Switch: FunctionComponent<Props> = ({ className, updatePeriod }) => {
   const checkboxRef = useRef(null);
 
   function handleCheckboxChange() {
     updatePeriod(checkboxRef.current.checked ? "year" : "month");
   }
 
-  function handleCheckboxKeyUp(event: KeyboardEvent) {
+  function handleCheckboxKeyUp(event) {
     if (event.key === "Enter") {
       checkboxRef.current.checked = !checkboxRef.current.checked;
     }

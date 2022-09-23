@@ -1,7 +1,8 @@
 import * as Styled from "./style";
 import Button from "@components/Button";
+import { FunctionComponent } from "react";
 
-function CardFooter() {
+const CardFooter: FunctionComponent = () => {
   return (
     <Styled.Footer>
       <Styled.List>

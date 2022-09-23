@@ -4,8 +4,9 @@ import { ThemeProvider } from "styled-components";
 import Background from "@components/Background";
 import Card from "@components/Card";
 import * as Styled from "./style";
+import { FunctionComponent } from "react";
 
-function App() {
+const App: FunctionComponent = () => {
   return (
     <>
       <GlobalStyle/>

@@ -1,6 +1,7 @@
+import { FunctionComponent, PropsWithChildren } from "react";
 import * as Styled from "./style";
 
-function Button({ children }) {
+const Button: FunctionComponent<PropsWithChildren> = ({ children }) => {
   return (
     <Styled.Button>{ children }</Styled.Button>
   );
