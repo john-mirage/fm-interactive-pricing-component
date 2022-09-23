@@ -10,7 +10,6 @@ export const Button = styled.button.attrs(() => ({
   border: 0.125rem solid ${({theme}) => theme.color.buttonBorder}; /* 2px */
   border-radius: 9999px;
   box-shadow: 0 0 0 0 ${({theme}) => theme.color.buttonShadow};
-  outline-color: ${({theme}) => theme.color.buttonOutline};
   font-weight: 800;
   padding-block: 0.75rem; /* 12px */
   padding-inline: 2.5rem; /* 40px */
@@ -18,10 +17,7 @@ export const Button = styled.button.attrs(() => ({
   -webkit-tap-highlight-color: transparent;
   -webkit-touch-callout: none;
   appearance: none;
-
-  &:not(:active):focus-visible {
-    outline-offset: 0.25rem; /* 4px */
-  }
+  outline-offset: 0.25rem; /* 4px */
 
   &:hover {
     color: ${({theme}) => theme.color.buttonLabelHover};

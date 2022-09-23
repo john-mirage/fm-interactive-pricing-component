@@ -24,7 +24,6 @@ const theme = {
     buttonLabel: "hsl(226, 100%, 87%)",
     buttonLabelHover: "hsl(0, 0%, 100%)",
     buttonShadow: "hsl(227 35% 25% / 25%)",
-    buttonOutline: "hsl(174, 86%, 45%)",
 
     switchTrackInactive: "hsl(223, 50%, 87%)",
     switchTrackHover: "hsl(174, 77%, 80%)",
