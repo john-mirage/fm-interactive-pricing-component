@@ -1,6 +1,6 @@
 import Header from "@components/Card/Header";
 import Footer from "@components/Card/Footer";
-import * as Styled from "@components/Card/style";
+import * as Styled from "./style";
 
 function Card() {
   return (

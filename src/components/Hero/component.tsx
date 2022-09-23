@@ -1,4 +1,4 @@
-import * as Styled from "@components/Hero/style";
+import * as Styled from "./style";
 
 function Hero() {
   return (

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Switch = styled.div`
   margin-bottom: 2.25rem; /* 36px */
   display: flex;
   flex-direction: column;

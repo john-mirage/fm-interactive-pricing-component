@@ -1,4 +1,4 @@
-import * as Styled from "@components/Background/style";
+import * as Styled from "./style";
 
 function Background() {
   return (

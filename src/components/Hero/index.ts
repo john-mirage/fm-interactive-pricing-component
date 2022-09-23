@@ -1,3 +1,3 @@
-import Hero from "@components/Hero/component";
+import Hero from "./component";
 
 export default Hero;

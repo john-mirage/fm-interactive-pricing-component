@@ -1,3 +1,3 @@
-import Footer from "@components/Card/Footer/component";
+import Footer from "./component";
 
 export default Footer;

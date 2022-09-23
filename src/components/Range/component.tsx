@@ -1,4 +1,4 @@
-import * as Styled from "@components/Card/Header/Range/style";
+import * as Styled from "./style";
 import { useEffect, useRef } from "react";
 
 function Range({ updatePageViews }) {

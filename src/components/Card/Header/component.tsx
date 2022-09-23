@@ -1,7 +1,7 @@
 import { useState } from "react";
-import * as Styled from "@components/Card/Header/style";
-import Range from "@components/Card/Header/Range";
-import Checkbox from "@components/Card/Header/Checkbox";
+import * as Styled from "./style";
+import Range from "@components/Range";
+import Switch from "@components/Switch";
 
 const priceFormatter = new Intl.NumberFormat("en-US", {
   style: "currency",
@@ -63,7 +63,7 @@ function Header() {
         <Styled.Price>{priceFormatter.format(price)}</Styled.Price>
         <Styled.Period> / {period}</Styled.Period>
       </Styled.PriceForPeriod>
-      <Checkbox updatePeriod={updatePeriod} />
+      <Switch updatePeriod={updatePeriod} />
     </Styled.Header>
   );
 }

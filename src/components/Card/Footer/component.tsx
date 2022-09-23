@@ -1,4 +1,5 @@
-import * as Styled from "@components/Card/Footer/style";
+import * as Styled from "./style";
+import Button from "@components/Button";
 
 function Footer() {
   return (
@@ -23,7 +24,7 @@ function Footer() {
           Email reports
         </Styled.ListItem>
       </Styled.List>
-      <Styled.Button>Start my trial</Styled.Button>
+      <Button>Start my trial</Button>
     </Styled.Footer>
   );
 }

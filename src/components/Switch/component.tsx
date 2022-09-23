@@ -1,13 +1,13 @@
-import * as Styled from "@components/Card/Header/Checkbox/style";
+import * as Styled from "./style";
 
-function Checkbox({ updatePeriod }) {
+function Switch({ updatePeriod }) {
   
   function handleInputChange(event: InputEvent) {
     updatePeriod(event.currentTarget.checked ? "year" : "month");
   }
   
   return (
-    <Styled.Container>
+    <Styled.Switch>
       <Styled.Plan>Monthly Billing</Styled.Plan>
       <Styled.Label>
         <Styled.Checkbox onChange={handleInputChange} />
@@ -16,8 +16,8 @@ function Checkbox({ updatePeriod }) {
         Yearly Billing
         <Styled.Badge>-25%</Styled.Badge>
       </Styled.Plan>
-    </Styled.Container>
+    </Styled.Switch>
   );
 }
 
-export default Checkbox;
+export default Switch;

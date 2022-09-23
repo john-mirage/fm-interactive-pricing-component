@@ -1,3 +1,3 @@
-import Header from "@components/Card/Header/component";
+import Header from "./component";
 
 export default Header;

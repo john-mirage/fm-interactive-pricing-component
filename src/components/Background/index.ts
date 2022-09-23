@@ -1,3 +1,3 @@
-import Background from "@components/Background/component";
+import Background from "./component";
 
 export default Background;
