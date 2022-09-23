@@ -1,7 +1,7 @@
-import CardHeader from "@components/Card/CardHeader";
 import CardFooter from "@components/Card/CardFooter";
-import * as Styled from "./style";
+import CardHeader from "@components/Card/CardHeader";
 import { FunctionComponent } from "react";
+import * as Styled from "./style";
 
 const Card: FunctionComponent = () => {
   return (

@@ -1,5 +1,5 @@
-import * as Styled from "./style";
 import { FunctionComponent, useEffect, useRef } from "react";
+import * as Styled from "./style";
 
 interface Props {
   className?: string;

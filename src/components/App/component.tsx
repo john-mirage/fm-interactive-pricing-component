@@ -1,10 +1,9 @@
-import GlobalStyle from "./GlobalStyle";
-import theme from "./theme";
-import { ThemeProvider } from "styled-components";
-import Background from "@components/Background";
 import Card from "@components/Card";
-import * as Styled from "./style";
 import { FunctionComponent } from "react";
+import { ThemeProvider } from "styled-components";
+import GlobalStyle from "./GlobalStyle";
+import * as Styled from "./style";
+import theme from "./theme";
 
 const App: FunctionComponent = () => {
   return (
@@ -12,7 +11,7 @@ const App: FunctionComponent = () => {
       <GlobalStyle/>
       <ThemeProvider theme={theme}>
         <Styled.App>
-          <Background />
+          <Styled.Background />
           <Styled.Hero />
           <Card />
         </Styled.App>
