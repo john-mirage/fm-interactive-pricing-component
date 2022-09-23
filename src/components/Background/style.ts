@@ -10,7 +10,7 @@ export const Background = styled.div`
   height: 25rem;/* 400px */
   background-image: url(${backgroundPattern});
   background-repeat: no-repeat;
-  background-position: left;
+  background-position: bottom left;
   background-size: cover;
 
   @media screen and (min-width: ${(props) => props.theme.screen.lg}) {
