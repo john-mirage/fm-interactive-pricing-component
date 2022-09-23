@@ -6,6 +6,8 @@ interface Props {
   updatePageViews: (newPageViews: string) => void;
 }
 
+const TRACK_FILL_PROPERTY = "--track-fill";
+
 const Range: FunctionComponent<Props> = ({ className, updatePageViews }) => {
   const [rangeValue, setRangeValue] = useState<string>("2");
   const [rangeMaxValue, setRangeMaxValue] = useState<string>("4");
@@ -13,8 +15,9 @@ const Range: FunctionComponent<Props> = ({ className, updatePageViews }) => {
 
   useEffect(() => {
     if (range.current) {
-      const percent = (Number(rangeValue) / Number(rangeMaxValue)) * 100;
-      range.current.style.setProperty("--track-fill", `${String(percent)}%`);
+      const nextPosition = `${String((Number(rangeValue) / Number(rangeMaxValue)) * 100)}%`;
+      const currentPosition = range.current.style.getPropertyValue(TRACK_FILL_PROPERTY);
+      if (nextPosition !== currentPosition) range.current.style.setProperty(TRACK_FILL_PROPERTY, nextPosition);
       switch (rangeValue) {
         case "0": updatePageViews("10k"); break;
         case "1": updatePageViews("50k"); break;
