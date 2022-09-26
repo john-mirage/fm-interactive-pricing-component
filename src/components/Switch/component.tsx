@@ -10,7 +10,11 @@ const Switch: FunctionComponent<Props> = ({ className, updatePeriod }) => {
   const checkboxRef = useRef<HTMLInputElement>(null);
 
   const handleCheckboxChange = () => {
-    if (checkboxRef.current) updatePeriod(checkboxRef.current.checked ? "year" : "month");
+    if (checkboxRef.current) {
+      const isChecked = checkboxRef.current.checked;
+      updatePeriod(isChecked ? "year" : "month");
+      checkboxRef.current.setAttribute("aria-checked", isChecked ? "true" : "false");
+    }
   }
 
   const handleCheckboxKeyUp = (event: React.KeyboardEvent<HTMLInputElement>) => {
@@ -27,6 +31,7 @@ const Switch: FunctionComponent<Props> = ({ className, updatePeriod }) => {
           ref={checkboxRef}
           onChange={handleCheckboxChange}
           onKeyUp={handleCheckboxKeyUp}
+          aria-checked="false"
         />
       </Styled.Label>
       <Styled.Plan>
