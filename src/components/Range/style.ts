@@ -33,7 +33,6 @@ const thumbStyle = css`
   &:hover,
   &:active {
     --thumb-highlight-size: 0.5rem;
-    
   }
   
   &:active {
