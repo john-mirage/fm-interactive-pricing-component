@@ -4,7 +4,6 @@ import { resolve } from "path";
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: "/fm-interactive-pricing-component/",
   plugins: [react({
     babel: {
       plugins: [
